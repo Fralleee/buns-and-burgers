@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Roland-Chelwing-s-workspace-aumdtj.eu-west-1.xata.sh/db/buns-and-burgers",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

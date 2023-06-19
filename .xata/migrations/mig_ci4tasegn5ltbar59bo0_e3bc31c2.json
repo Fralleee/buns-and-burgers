@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4tasegn5ltbar59bo0",
+  "parentID": "mig_ci4targidd1hd3fkr9rg",
+  "checksum": "1:e3bc31c29f0e840eaff5a24072747ff9e99c54eb616eafab7a94d1e250fa9a32",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "customerId",
+        "table": "orders"
+      }
+    }
+  ]
+}

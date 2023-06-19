@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4s95jelh0d0vefptj0",
+  "parentID": "mig_ci4s93jo1u5a17ne1hdg",
+  "checksum": "1:e05d1d00e4651f5d1d1c87f61242eb3a9749c52ae9c4eb298d0e97ef343ed9e0",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "extraIngredients",
+        "oldName": "availableExtras"
+      }
+    }
+  ]
+}

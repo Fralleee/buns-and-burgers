@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci66pnoooca9oi7m6tb0",
+  "parentID": "mig_ci4v648idd1hd3fkrc6g",
+  "checksum": "1:381a487f60486dfd026d4e9c8fb0d1ce1494cf28eeb4c2b943afeacf9e230fcb",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "blurDataURL",
+          "type": "string"
+        },
+        "table": "hamburgers"
+      }
+    }
+  ]
+}

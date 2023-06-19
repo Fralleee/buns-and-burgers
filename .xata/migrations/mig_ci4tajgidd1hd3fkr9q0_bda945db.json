@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4tajgidd1hd3fkr9q0",
+  "parentID": "mig_ci4taimvo1qci9hcqaag",
+  "checksum": "1:bda945db88387ab38ebfc7e7c7bd27f5896fb5ae551a69fa63789d753b590164",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "hamburgerId",
+        "table": "orderHamburgers"
+      }
+    }
+  ]
+}

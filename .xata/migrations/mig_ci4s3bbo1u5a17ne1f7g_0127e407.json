@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci4s3bbo1u5a17ne1f7g",
+  "parentID": "mig_ci4s313elh0d0vefpkjg",
+  "checksum": "1:0127e40718c62bb30f9422f5f4ccdb6436e84613b6f433a4574ed2cdd11a49be",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "ingredientIds",
+          "type": "multiple"
+        },
+        "table": "hamburgers"
+      }
+    }
+  ]
+}

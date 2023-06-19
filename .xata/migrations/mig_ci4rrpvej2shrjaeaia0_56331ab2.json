@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci4rrpvej2shrjaeaia0",
+  "parentID": "mig_ci4rrkvej2shrjaeai8g",
+  "checksum": "1:56331ab272a6e88adcec180428274f34142e43f0f60f57a5e336f607e8e5220b",
+  "operations": [
+    {
+      "addTable": {
+        "table": "hamburgerExtras"
+      }
+    }
+  ]
+}

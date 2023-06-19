@@ -1,0 +1,14 @@
+{
+  "id": "mig_ci4satrelh0d0vefpu00",
+  "parentID": "mig_ci4saqjo1u5a17ne1n7g",
+  "checksum": "1:b3c18f95b62f9d5533bd9379b20c02b8a5ecfb05c4c5f592884a53935d589069",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "extraIngredientIds",
+        "oldName": "availableExtraIngredientIds",
+        "table": "hamburgers"
+      }
+    }
+  ]
+}

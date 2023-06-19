@@ -1,0 +1,17 @@
+{
+  "id": "mig_ci4rrunr03t2m6hh9fg0",
+  "parentID": "mig_ci4rrpvej2shrjaeaia0",
+  "checksum": "1:ed6aec7fa92178789a31f93794013869fa20910f587d4367a41845ab04d2b15c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "hamburgerId",
+          "type": "string",
+          "unique": true
+        },
+        "table": "hamburgerExtras"
+      }
+    }
+  ]
+}

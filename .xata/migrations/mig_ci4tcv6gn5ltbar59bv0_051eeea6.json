@@ -1,0 +1,19 @@
+{
+  "id": "mig_ci4tcv6gn5ltbar59bv0",
+  "parentID": "mig_ci4tcqoidd1hd3fkr9tg",
+  "checksum": "1:051eeea6e5fec505d42fc096a074541b4981d46c68b04cbed306f064cb89c23b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "extraIngredient",
+          "type": "link",
+          "link": {
+            "table": "extraIngredients"
+          }
+        },
+        "table": "hamburgerAvailableExtraIngredients"
+      }
+    }
+  ]
+}

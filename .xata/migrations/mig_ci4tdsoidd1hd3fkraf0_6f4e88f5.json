@@ -1,0 +1,19 @@
+{
+  "id": "mig_ci4tdsoidd1hd3fkraf0",
+  "parentID": "mig_ci4tdpevo1qci9hcqtq0",
+  "checksum": "1:6f4e88f5543b230b747d7fb9724639401d9d92a9a5d342704eb986496beb5511",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "hamburgerIngredient",
+          "type": "link",
+          "link": {
+            "table": "hamburgerIngredients"
+          }
+        },
+        "table": "orderHamburgerRemovedIngredients"
+      }
+    }
+  ]
+}

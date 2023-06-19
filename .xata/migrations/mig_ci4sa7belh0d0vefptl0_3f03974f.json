@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4sa7belh0d0vefptl0",
+  "parentID": "mig_ci4s9bbelh0d0vefptk0",
+  "checksum": "1:3f03974fe2614ac2d7bc2cf6edc5c02066ffc82df8ec83d3cea564315576ed0f",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "hamburgerAvailableExtraIngredients",
+        "oldName": "hamburgerAvailableExtras"
+      }
+    }
+  ]
+}

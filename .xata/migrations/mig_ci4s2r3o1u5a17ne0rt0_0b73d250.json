@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci4s2r3o1u5a17ne0rt0",
+  "parentID": "mig_ci4s2nbo1u5a17ne0rlg",
+  "checksum": "1:0b73d25093744670c149cd3bd241afbcbe4865b9d4ecfa8ae5363460d7fe73cd",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "removedIngredientIds",
+          "type": "multiple"
+        },
+        "table": "hamburgerExtras"
+      }
+    }
+  ]
+}

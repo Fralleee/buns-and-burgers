@@ -1,0 +1,18 @@
+{
+  "id": "mig_ci4sburelh0d0vefpu20",
+  "parentID": "mig_ci4sbq3o1u5a17ne1ndg",
+  "checksum": "1:2c82d25e8577776deb07007d599183056016e47755d639f1916fa7fa7bb1f8c6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "rawData",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "orders"
+      }
+    }
+  ]
+}

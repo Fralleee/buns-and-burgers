@@ -1,0 +1,14 @@
+{
+  "id": "mig_ci4rsufej2shrjaeaib0",
+  "parentID": "mig_ci4rsqbn4uar8jgqetbg",
+  "checksum": "1:33b0ec5eb2681bd4c07a5b2dbe5cd760fac84241ff1107b93a72fe24c92a6771",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "extrasIds",
+        "oldName": "extras",
+        "table": "orderHamburgers"
+      }
+    }
+  ]
+}

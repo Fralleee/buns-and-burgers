@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4rq7rn4uar8jgqet50",
+  "parentID": "mig_ci4rq6fej2shrjaeai30",
+  "checksum": "1:94da608b87040111772d9a9e7cf5ed42afb78b87bc570f4d2387cc0238c93d61",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "hamburgers",
+        "oldName": "Hamburgers"
+      }
+    }
+  ]
+}

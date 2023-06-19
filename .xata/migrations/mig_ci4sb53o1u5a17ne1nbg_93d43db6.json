@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci4sb53o1u5a17ne1nbg",
+  "parentID": "mig_ci4sb3belh0d0vefpu10",
+  "checksum": "1:93d43db64ab557dbd0bd0634f6215b9f034e3aeafd43b546bf44bc37ec973461",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "hamburgerAvailableExtraIngredients"
+      }
+    }
+  ]
+}

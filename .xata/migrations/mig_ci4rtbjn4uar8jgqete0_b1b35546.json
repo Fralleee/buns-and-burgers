@@ -1,0 +1,18 @@
+{
+  "id": "mig_ci4rtbjn4uar8jgqete0",
+  "parentID": "mig_ci4rt8jn4uar8jgqetd0",
+  "checksum": "1:b1b3554649260dd7c1e12913ea0c57c25e0e9ba6638d2c42c8d6d8a94a9bd24b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "unnamed"
+        },
+        "table": "customers"
+      }
+    }
+  ]
+}

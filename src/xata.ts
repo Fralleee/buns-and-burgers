@@ -6,12 +6,165 @@ import type {
   XataRecord,
 } from "@xata.io/client";
 
-const tables = [] as const;
+const tables = [
+  {
+    name: "hamburgers",
+    columns: [
+      { name: "name", type: "string", unique: true },
+      { name: "description", type: "string" },
+      { name: "basePrice", type: "float", notNull: true, defaultValue: "1.0" },
+      {
+        name: "imageUrl",
+        type: "string",
+        defaultValue:
+          "https://res.cloudinary.com/dugkeawjq/image/upload/f_auto,q_auto/vpvmqxjgbk8xq3zafkcl",
+      },
+      { name: "blurDataURL", type: "string" },
+    ],
+  },
+  {
+    name: "extraIngredients",
+    columns: [
+      { name: "price", type: "float", notNull: true, defaultValue: "1.0" },
+      {
+        name: "ingredient",
+        type: "link",
+        link: { table: "ingredients" },
+        unique: true,
+      },
+    ],
+  },
+  {
+    name: "orderHamburgers",
+    columns: [
+      { name: "order", type: "link", link: { table: "orders" } },
+      { name: "hamburger", type: "link", link: { table: "hamburgers" } },
+    ],
+  },
+  {
+    name: "orders",
+    columns: [
+      {
+        name: "totalPrice",
+        type: "float",
+        notNull: true,
+        defaultValue: "0.00",
+      },
+      { name: "rawData", type: "text", notNull: true, defaultValue: "{}" },
+      { name: "customer", type: "link", link: { table: "customers" } },
+    ],
+  },
+  {
+    name: "customers",
+    columns: [
+      { name: "name", type: "string", notNull: true, defaultValue: "unnamed" },
+    ],
+  },
+  {
+    name: "ingredients",
+    columns: [
+      { name: "name", type: "string", unique: true },
+      { name: "description", type: "string" },
+    ],
+  },
+  {
+    name: "hamburgerIngredients",
+    columns: [
+      { name: "hamburger", type: "link", link: { table: "hamburgers" } },
+      { name: "ingredient", type: "link", link: { table: "ingredients" } },
+      { name: "count", type: "int", defaultValue: "1" },
+    ],
+  },
+  {
+    name: "hamburgerAvailableExtraIngredients",
+    columns: [
+      { name: "hamburger", type: "link", link: { table: "hamburgers" } },
+      { name: "ingredient", type: "link", link: { table: "extraIngredients" } },
+    ],
+  },
+  {
+    name: "orderHamburgerExtraIngredients",
+    columns: [
+      {
+        name: "orderHamburger",
+        type: "link",
+        link: { table: "orderHamburgers" },
+      },
+      {
+        name: "extraIngredient",
+        type: "link",
+        link: { table: "extraIngredients" },
+      },
+    ],
+  },
+  {
+    name: "orderHamburgerRemovedIngredients",
+    columns: [
+      {
+        name: "orderHamburger",
+        type: "link",
+        link: { table: "orderHamburgers" },
+      },
+      {
+        name: "hamburgerIngredient",
+        type: "link",
+        link: { table: "hamburgerIngredients" },
+      },
+    ],
+  },
+] as const;
 
 export type SchemaTables = typeof tables;
 export type InferredTypes = SchemaInference<SchemaTables>;
 
-export type DatabaseSchema = {};
+export type Hamburgers = InferredTypes["hamburgers"];
+export type HamburgersRecord = Hamburgers & XataRecord;
+
+export type ExtraIngredients = InferredTypes["extraIngredients"];
+export type ExtraIngredientsRecord = ExtraIngredients & XataRecord;
+
+export type OrderHamburgers = InferredTypes["orderHamburgers"];
+export type OrderHamburgersRecord = OrderHamburgers & XataRecord;
+
+export type Orders = InferredTypes["orders"];
+export type OrdersRecord = Orders & XataRecord;
+
+export type Customers = InferredTypes["customers"];
+export type CustomersRecord = Customers & XataRecord;
+
+export type Ingredients = InferredTypes["ingredients"];
+export type IngredientsRecord = Ingredients & XataRecord;
+
+export type HamburgerIngredients = InferredTypes["hamburgerIngredients"];
+export type HamburgerIngredientsRecord = HamburgerIngredients & XataRecord;
+
+export type HamburgerAvailableExtraIngredients =
+  InferredTypes["hamburgerAvailableExtraIngredients"];
+export type HamburgerAvailableExtraIngredientsRecord =
+  HamburgerAvailableExtraIngredients & XataRecord;
+
+export type OrderHamburgerExtraIngredients =
+  InferredTypes["orderHamburgerExtraIngredients"];
+export type OrderHamburgerExtraIngredientsRecord =
+  OrderHamburgerExtraIngredients & XataRecord;
+
+export type OrderHamburgerRemovedIngredients =
+  InferredTypes["orderHamburgerRemovedIngredients"];
+export type OrderHamburgerRemovedIngredientsRecord =
+  OrderHamburgerRemovedIngredients & XataRecord;
+
+export type DatabaseSchema = {
+  hamburgers: HamburgersRecord;
+  extraIngredients: ExtraIngredientsRecord;
+  orderHamburgers: OrderHamburgersRecord;
+  orders: OrdersRecord;
+  customers: CustomersRecord;
+  ingredients: IngredientsRecord;
+  hamburgerIngredients: HamburgerIngredientsRecord;
+  hamburgerAvailableExtraIngredients: HamburgerAvailableExtraIngredientsRecord;
+  orderHamburgerExtraIngredients: OrderHamburgerExtraIngredientsRecord;
+  orderHamburgerRemovedIngredients: OrderHamburgerRemovedIngredientsRecord;
+};
 
 const DatabaseClient = buildClient();
 

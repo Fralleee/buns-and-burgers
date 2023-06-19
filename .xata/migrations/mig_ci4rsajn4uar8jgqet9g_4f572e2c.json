@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci4rsajn4uar8jgqet9g",
+  "parentID": "mig_ci4rs1fr03t2m6hh9fh0",
+  "checksum": "1:4f572e2c01097239a33e892a1dec98ad95c883f90d81f5362f7902f2d4dc70a7",
+  "operations": [
+    {
+      "addTable": {
+        "table": "orderHamburgers"
+      }
+    }
+  ]
+}

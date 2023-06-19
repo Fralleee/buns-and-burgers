@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4s93jo1u5a17ne1hdg",
+  "parentID": "mig_ci4s8srelh0d0vefpti0",
+  "checksum": "1:f508c57b28ff4c85eb4142a36de9626513966b53475e1be0c470a381f05bd544",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "availableExtras",
+        "oldName": "extras"
+      }
+    }
+  ]
+}

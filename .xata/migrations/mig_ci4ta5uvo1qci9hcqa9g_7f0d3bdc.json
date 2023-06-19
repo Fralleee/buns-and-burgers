@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci4ta5uvo1qci9hcqa9g",
+  "parentID": "mig_ci4ta4uvo1qci9hcqa8g",
+  "checksum": "1:7f0d3bdc6722715bdba93f9e56ba0a56b2df4ad5ede5f05ab8c4622510e1dabf",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "ingredientId",
+        "table": "extraIngredients"
+      }
+    }
+  ]
+}

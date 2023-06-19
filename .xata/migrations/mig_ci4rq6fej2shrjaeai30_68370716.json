@@ -1,0 +1,11 @@
+{
+  "id": "mig_ci4rq6fej2shrjaeai30",
+  "checksum": "1:683707163e687149f6b2cb195450ace9f4762e317840b8daa2e4320c10392c1d",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Hamburgers"
+      }
+    }
+  ]
+}

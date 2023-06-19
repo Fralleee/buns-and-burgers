@@ -1,0 +1,20 @@
+{
+  "id": "mig_ci4ta4uvo1qci9hcqa8g",
+  "parentID": "mig_ci4t8oevo1qci9hcqa6g",
+  "checksum": "1:2f4a5eda47eb9baabb77f832e91352bd487157881c8e18a6af1edbe77017960e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "ingredient",
+          "type": "link",
+          "link": {
+            "table": "ingredients"
+          },
+          "unique": true
+        },
+        "table": "extraIngredients"
+      }
+    }
+  ]
+}

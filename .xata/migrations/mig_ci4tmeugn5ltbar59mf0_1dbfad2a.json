@@ -1,0 +1,17 @@
+{
+  "id": "mig_ci4tmeugn5ltbar59mf0",
+  "parentID": "mig_ci4tduoidd1hd3fkrahg",
+  "checksum": "1:1dbfad2a2c098eff2dba48d5673a54c60cd1c420c001f6f191e4c4bac1680bc1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "imageUrl",
+          "type": "string",
+          "defaultValue": "https://res.cloudinary.com/dugkeawjq/image/upload/f_auto,q_auto/vpvmqxjgbk8xq3zafkcl"
+        },
+        "table": "hamburgers"
+      }
+    }
+  ]
+}

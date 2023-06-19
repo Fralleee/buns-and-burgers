@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci4td96gn5ltbar59cj0",
+  "parentID": "mig_ci4td1mgn5ltbar59c00",
+  "checksum": "1:d72a12686250ae303c3c1b4b2b8cab3a15bfc74d0987b18c1fc3ca526685a547",
+  "operations": [
+    {
+      "addTable": {
+        "table": "orderHamburgerExtraIngredients"
+      }
+    }
+  ]
+}

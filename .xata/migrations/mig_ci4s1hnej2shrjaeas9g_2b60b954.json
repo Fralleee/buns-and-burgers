@@ -1,0 +1,17 @@
+{
+  "id": "mig_ci4s1hnej2shrjaeas9g",
+  "parentID": "mig_ci4s1cvej2shrjaeas8g",
+  "checksum": "1:2b60b95451bcb8cd84a019c49f5508b394ecaacef162fed0e617a6c9a6b2abaa",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "unique": true
+        },
+        "table": "ingredients"
+      }
+    }
+  ]
+}

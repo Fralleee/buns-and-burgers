@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci4rr0fej2shrjaeai50",
+  "parentID": "mig_ci4rqsnej2shrjaeai40",
+  "checksum": "1:c6af34154f73ea1bba7423e819936a3eda53ee1b760a3887848b36f61350d213",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "basePrice",
+          "type": "float"
+        },
+        "table": "hamburgers"
+      }
+    }
+  ]
+}

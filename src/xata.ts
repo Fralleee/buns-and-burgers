@@ -79,7 +79,11 @@ const tables = [
     name: "hamburgerAvailableExtraIngredients",
     columns: [
       { name: "hamburger", type: "link", link: { table: "hamburgers" } },
-      { name: "ingredient", type: "link", link: { table: "extraIngredients" } },
+      {
+        name: "extraIngredient",
+        type: "link",
+        link: { table: "extraIngredients" },
+      },
     ],
   },
   {

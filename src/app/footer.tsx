@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <Box
-      backgroundImage="./texture_3.png"
+      backgroundImage="./texture_3.jpg"
       backgroundRepeat={"repeat"}
       minHeight={450}
       display={"flex"}

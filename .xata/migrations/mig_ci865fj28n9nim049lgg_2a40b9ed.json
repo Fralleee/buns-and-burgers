@@ -1,0 +1,18 @@
+{
+  "id": "mig_ci865fj28n9nim049lgg",
+  "parentID": "mig_ci66pnoooca9oi7m6tb0",
+  "checksum": "1:2a40b9ed6233fbee10873e41f6c5aa58479c3a729f39ca32325731239fe00088",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "price",
+          "type": "float",
+          "notNull": true,
+          "defaultValue": "0.00"
+        },
+        "table": "hamburgerAvailableExtraIngredients"
+      }
+    }
+  ]
+}

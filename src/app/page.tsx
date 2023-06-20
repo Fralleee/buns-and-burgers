@@ -10,10 +10,10 @@ const blurDataURL =
 
 export default function Home() {
   return (
-    <Box position={"relative"} minHeight={"100vh"}>
-      <Box textAlign={"center"} display={"flex"} flexDirection={"column"} alignItems={"center"} zIndex={1} paddingBlockStart={16}>
+    <Box position={"relative"} display={"flex"} paddingTop={[4, 6, 8, 12, 16, 20, 24]} marginInline={"auto"} width={"100%"} minHeight={480} aspectRatio={3 / 2} maxWidth={"1600"}>
+      <Box display={"flex"} flexDirection={"column"} marginInline={["auto", "auto", 0]} alignItems={"center"} zIndex={1} paddingBlockStart={16}>
         <Image src="/header.svg" alt="Vercel Logo" width={128} height={128} priority />
-        <Heading opacity={0.7} fontSize={{ base: "48px", lg: "64px", xl: "96px" }}>
+        <Heading opacity={0.7} fontSize={{ base: "32px", md: "48px", lg: "64px", xl: "80px", "2xl": "96px" }}>
           BUNS AND BURGERS
         </Heading>
         <Divider marginBlock={"1em"} />
@@ -32,17 +32,18 @@ export default function Home() {
         </Button>
       </Box>
 
-      <Box position={"absolute"} left={0} right={0} bottom={0} opacity={0.7} display={"flex"} justifyContent={"center"} zIndex={-1}>
-        <Image
-          placeholder="blur"
-          src="https://res.cloudinary.com/dugkeawjq/image/upload/f_auto,q_auto/coadzsqs4lmmzercbhuk"
-          blurDataURL={blurDataURL}
-          alt="Next.js Logo"
-          width={720}
-          height={720}
-          priority
-        />
-      </Box>
+      <Box
+        position={"absolute"}
+        width={["100%", "100%", 512, 640, 720, 1000]}
+        right={0}
+        top={0}
+        bottom={0}
+        zIndex={-1}
+        backgroundSize={"contain"}
+        backgroundRepeat={"no-repeat"}
+        opacity={[0.4, 0.4, 1]}
+        backgroundPosition={["bottom center", "bottom center", "bottom right"]}
+        backgroundImage={"https://res.cloudinary.com/dugkeawjq/image/upload/f_auto,q_auto/coadzsqs4lmmzercbhuk"}></Box>
     </Box>
   );
 }

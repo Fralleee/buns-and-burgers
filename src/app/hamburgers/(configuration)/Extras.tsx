@@ -25,11 +25,11 @@ export default function Extras({ extraIngredients, onUpdateCount }: Props) {
                 <Td>{extraIngredient.ingredient?.name}</Td>
                 <Td isNumeric>{extraIngredient.price}</Td>
                 <Td isNumeric display={"flex"} justifyContent={"flex-end"} gap={"0.5em"}>
-                  <Button variant={"outline"} colorScheme={"red"} size={"xs"} onClick={() => onUpdateCount(extraIngredient.id, Math.max(extraIngredient.count - 1, 0))}>
+                  <Button colorScheme="red" variant={"outline"} size={"xs"} onClick={() => onUpdateCount(extraIngredient.id, Math.max(extraIngredient.count - 1, 0))}>
                     -
                   </Button>
                   <Text>{extraIngredient.count}</Text>
-                  <Button variant={"outline"} colorScheme={"red"} size={"xs"} onClick={() => onUpdateCount(extraIngredient.id, extraIngredient.count + 1)}>
+                  <Button colorScheme="red" variant={"outline"} size={"xs"} onClick={() => onUpdateCount(extraIngredient.id, extraIngredient.count + 1)}>
                     +
                   </Button>
                 </Td>

@@ -1,8 +1,7 @@
-import ShoppingCart from "../components/ShoppingCart";
-import HamburgerMenu from "./HamburgerMenu";
 import { getHamburgers } from "@/app/api/hamburgers";
+import Store from "./Store";
 
 export default async function Page() {
   const hamburgers = await getHamburgers();
-  return <HamburgerMenu hamburgers={hamburgers} />;
+  return <Store hamburgers={hamburgers} />;
 }

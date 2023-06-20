@@ -1,22 +1,13 @@
-import { Hamburger } from "@/types/Hamburger";
-import { useReducer } from "react";
-
-interface State {
-  orderCount: number;
-  selectedHamburger: Hamburger | null | undefined;
-}
+import { CartState } from "@/types/Cart";
+import { Hamburger, OrderHamburger } from "@/types/Hamburger";
+import { useCallback, useReducer } from "react";
 
 interface Action {
   type: "selectHamburger" | "addToCart";
-  payload?: Hamburger;
+  payload?: Hamburger | OrderHamburger;
 }
 
-const initialState: State = {
-  orderCount: 0,
-  selectedHamburger: null,
-};
-
-function reducer(state: State, action: Action): State {
+function reducer(state: CartState, action: Action): CartState {
   switch (action.type) {
     case "selectHamburger":
       return {
@@ -24,34 +15,33 @@ function reducer(state: State, action: Action): State {
         selectedHamburger: action.payload,
       };
     case "addToCart":
+      if (!action.payload) throw new Error("No payload provided");
+      const orderHamburger = action.payload as OrderHamburger;
       return {
         ...state,
         orderCount: state.orderCount + 1,
+        orderHamburgers: [...state.orderHamburgers, orderHamburger],
+        totalCost: state.totalCost + orderHamburger.price,
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
 
-export function useCartActions(hamburgers: Hamburger[]) {
+export function useCartActions(hamburgers: Hamburger[], initialState: CartState) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const openDetails = (id: string, onDetailsOpened: () => void) => {
-    const selectedHamburger = hamburgers.find(hamburger => hamburger.id === id);
-    if (selectedHamburger) {
+  const selectHamburger = useCallback(
+    (id: string | null) => {
+      const selectedHamburger = hamburgers.find(hamburger => hamburger.id === id);
       dispatch({ type: "selectHamburger", payload: selectedHamburger });
-      if (onDetailsOpened) {
-        onDetailsOpened();
-      }
-    }
-  };
+    },
+    [hamburgers]
+  );
 
-  const addToCart = (onAdded: () => void) => {
-    dispatch({ type: "addToCart" });
-    if (onAdded) {
-      onAdded();
-    }
-  };
+  const addToCart = useCallback((orderHamburger: OrderHamburger) => {
+    dispatch({ type: "addToCart", payload: orderHamburger });
+  }, []);
 
-  return { state, openDetails, addToCart };
+  return { state, selectHamburger, addToCart };
 }

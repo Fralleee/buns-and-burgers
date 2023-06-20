@@ -27,7 +27,7 @@ export default function Home() {
           maxW={"35ch"}>
           Where Artisan Buns and Handcrafted Burgers Create a Taste Sensation!
         </Heading>
-        <Button marginBlockStart={"2em"} rightIcon={<MdShoppingBasket />} colorScheme="red" size={"lg"} as={NextLink} href="hamburgers">
+        <Button colorScheme="red" marginBlockStart={"2em"} rightIcon={<MdShoppingBasket />} size={"lg"} as={NextLink} href="hamburgers">
           Order now
         </Button>
       </Box>

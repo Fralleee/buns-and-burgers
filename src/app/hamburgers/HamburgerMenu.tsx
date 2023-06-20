@@ -1,30 +1,22 @@
 "use client";
 
-import { Box, Button, Divider, Heading, SimpleGrid, useDisclosure, Badge } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import { Box, Divider, Heading, SimpleGrid } from "@chakra-ui/react";
 import Image from "next/image";
+import CartContext from "../context/CartContext";
 import OnOpenContext from "../context/OnOpenContext";
 import HamburgerCard from "./HamburgerCard";
-import HamburgerConfiguration from "./HamburgerConfiguration";
 import { Hamburger } from "@/types/Hamburger";
-import ShoppingCart from "../components/ShoppingCart";
-import { MdShoppingCart } from "react-icons/md";
-import { useCartActions } from "../hooks/useCartActions";
 
 interface Props {
   hamburgers: Hamburger[];
 }
 
 export default function HamburgerMenu({ hamburgers }: Props) {
-  const { state, openDetails, addToCart } = useCartActions(hamburgers);
-  const { isOpen: isModalOpen, onOpen: onModalOpen, onClose: onModalClose } = useDisclosure();
-  const { isOpen: isCartOpen, onOpen: onCartOpen, onClose: onCartClose } = useDisclosure();
+  const { selectHamburger } = useContext(CartContext);
 
   const handleHamburgerClick = (id: string) => {
-    openDetails(id, onModalOpen);
-  };
-
-  const addHamburgerToCart = () => {
-    addToCart(onCartOpen);
+    selectHamburger(id);
   };
 
   return (
@@ -52,16 +44,6 @@ export default function HamburgerMenu({ hamburgers }: Props) {
             <HamburgerCard key={hamburger.id} hamburger={hamburger} />
           ))}
         </SimpleGrid>
-        <Button leftIcon={<MdShoppingCart />} size={"lg"} position={"fixed"} bottom={8} right={8} colorScheme="red" onClick={onCartOpen}>
-          Order
-          {state.orderCount > 0 && (
-            <Badge marginInline={"1em"} colorScheme="red" variant="subtle" size={"md"}>
-              {state.orderCount}
-            </Badge>
-          )}
-        </Button>
-        <HamburgerConfiguration hamburger={state.selectedHamburger} isOpen={isModalOpen} onClose={onModalClose} onAdd={addHamburgerToCart} />
-        <ShoppingCart isOpen={isCartOpen} onClose={onCartClose} />
       </Box>
     </OnOpenContext.Provider>
   );

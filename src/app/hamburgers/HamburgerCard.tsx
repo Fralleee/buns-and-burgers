@@ -32,7 +32,7 @@ export default function HamburgerCard({ hamburger }: Props) {
           <Heading>${hamburger.basePrice}</Heading>
         </Box>
       </Box>
-      <Button width={"100%"} borderRadius={0} colorScheme="red" size={["sm", "md", "lg"]} zIndex={1} onClick={handleOpen}>
+      <Button colorScheme="red" width={"100%"} borderRadius={0} size={["sm", "md", "lg"]} zIndex={1} onClick={handleOpen}>
         Get it
       </Button>
     </Box>

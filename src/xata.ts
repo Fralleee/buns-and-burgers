@@ -51,13 +51,6 @@ const tables = [
         defaultValue: "0.00",
       },
       { name: "rawData", type: "text", notNull: true, defaultValue: "{}" },
-      { name: "customer", type: "link", link: { table: "customers" } },
-    ],
-  },
-  {
-    name: "customers",
-    columns: [
-      { name: "name", type: "string", notNull: true, defaultValue: "unnamed" },
     ],
   },
   {
@@ -99,21 +92,7 @@ const tables = [
         type: "link",
         link: { table: "extraIngredients" },
       },
-    ],
-  },
-  {
-    name: "orderHamburgerRemovedIngredients",
-    columns: [
-      {
-        name: "orderHamburger",
-        type: "link",
-        link: { table: "orderHamburgers" },
-      },
-      {
-        name: "hamburgerIngredient",
-        type: "link",
-        link: { table: "hamburgerIngredients" },
-      },
+      { name: "count", type: "int", notNull: true, defaultValue: "0" },
     ],
   },
 ] as const;
@@ -133,9 +112,6 @@ export type OrderHamburgersRecord = OrderHamburgers & XataRecord;
 export type Orders = InferredTypes["orders"];
 export type OrdersRecord = Orders & XataRecord;
 
-export type Customers = InferredTypes["customers"];
-export type CustomersRecord = Customers & XataRecord;
-
 export type Ingredients = InferredTypes["ingredients"];
 export type IngredientsRecord = Ingredients & XataRecord;
 
@@ -152,22 +128,15 @@ export type OrderHamburgerExtraIngredients =
 export type OrderHamburgerExtraIngredientsRecord =
   OrderHamburgerExtraIngredients & XataRecord;
 
-export type OrderHamburgerRemovedIngredients =
-  InferredTypes["orderHamburgerRemovedIngredients"];
-export type OrderHamburgerRemovedIngredientsRecord =
-  OrderHamburgerRemovedIngredients & XataRecord;
-
 export type DatabaseSchema = {
   hamburgers: HamburgersRecord;
   extraIngredients: ExtraIngredientsRecord;
   orderHamburgers: OrderHamburgersRecord;
   orders: OrdersRecord;
-  customers: CustomersRecord;
   ingredients: IngredientsRecord;
   hamburgerIngredients: HamburgerIngredientsRecord;
   hamburgerAvailableExtraIngredients: HamburgerAvailableExtraIngredientsRecord;
   orderHamburgerExtraIngredients: OrderHamburgerExtraIngredientsRecord;
-  orderHamburgerRemovedIngredients: OrderHamburgerRemovedIngredientsRecord;
 };
 
 const DatabaseClient = buildClient();

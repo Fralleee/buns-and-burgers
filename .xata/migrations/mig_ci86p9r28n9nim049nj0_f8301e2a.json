@@ -1,0 +1,18 @@
+{
+  "id": "mig_ci86p9r28n9nim049nj0",
+  "parentID": "mig_ci86oppnorldrcbnd5e0",
+  "checksum": "1:f8301e2ae8743b7a6690749f1ff8e14a1320b97bfa1106cb730026508decfe94",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "count",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "0"
+        },
+        "table": "orderHamburgerExtraIngredients"
+      }
+    }
+  ]
+}

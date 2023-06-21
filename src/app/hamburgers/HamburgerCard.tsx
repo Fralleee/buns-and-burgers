@@ -21,7 +21,16 @@ export default function HamburgerCard({ hamburger }: Props) {
   const name = hamburger.name || "Unknown Hamburger";
 
   return (
-    <Box borderRadius={16} overflow={"hidden"} maxWidth={320} marginInline={"auto"}>
+    <Box
+      onClick={handleOpen}
+      as="button"
+      borderRadius={16}
+      overflow={"hidden"}
+      maxWidth={320}
+      marginInline={"auto"}
+      zIndex={1}
+      transition={"all 150ms ease-out"}
+      _hover={{ transform: "scale(1.05)" }}>
       <Box position={"relative"} aspectRatio={1}>
         <Center position={"relative"}>
           <Box position="absolute" inset={0} bgGradient="linear(to-t, rgba(0,0,0,.7), transparent)" />

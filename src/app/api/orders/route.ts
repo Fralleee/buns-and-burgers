@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   };
 
   try {
-    const createdOrder = await xata.db.orders.create({ totalPrice: state.totalPrice, rawData: JSON.stringify(state) });
+    const createdOrder = await xata.db.orders.create({ totalPrice: state.totalPrice, rawData: state.rawData });
     orderState.orderId = createdOrder.id;
     for (const orderHamburger of state.orderHamburgers) {
       const createdOrderHamburger = await xata.db.orderHamburgers.create({ order: createdOrder.id, hamburger: orderHamburger.id });

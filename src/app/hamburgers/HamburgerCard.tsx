@@ -33,7 +33,7 @@ export default function HamburgerCard({ hamburger }: Props) {
         </Box>
       </Box>
       <Button colorScheme="red" width={"100%"} borderRadius={0} size={["sm", "md", "lg"]} zIndex={1} onClick={handleOpen}>
-        Get it
+        Get it now
       </Button>
     </Box>
   );

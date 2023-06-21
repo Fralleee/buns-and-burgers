@@ -5,6 +5,9 @@
 
 Welcome to **Buns and Burgers**, a hamburger restaurant ordering website built with Next.js, Chakra UI, and Xata. This project serves as a demo page and a proof of concept, showcasing the power of Next.js for server-side rendering, Chakra UI for beautiful and responsive UI components, and Xata as a lightweight database solution.
 
+## Demo
+Page is live at [https://buns-and-burgers.netlify.app/](https://buns-and-burgers.netlify.app/)
+
 ## Installation
 To run the Buns and Burgers website locally, make sure you have Node.js and npm installed. Then, follow these steps:
 

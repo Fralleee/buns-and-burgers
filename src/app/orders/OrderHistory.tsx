@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Box, Divider, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Divider, Heading, List, ListItem } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import Price from "../hamburgers/(configuration)/Price";
 
 const OrderHistory = () => {
   const [orderHistory, setOrderHistory] = useState([]);
@@ -12,8 +11,7 @@ const OrderHistory = () => {
     const fetchOrderHistory = async () => {
       try {
         const response = await fetch("/api/orders");
-        const json = await response.json();
-        const data = json.map((order: any) => ({ id: order.id, ...JSON.parse(order.rawData) }));
+        const data = await response.json();
         setOrderHistory(data);
       } catch (error) {
         console.error("Error fetching order history:", error);
@@ -42,32 +40,21 @@ const OrderHistory = () => {
           Where Past Cravings and Regretful Choices Unite!
         </Heading>
       </Box>
-      <VStack spacing={4} align="start" maxWidth={720} marginInline={"auto"} marginBlock={"3em"}>
-        {orderHistory.map((order: any) => (
-          <Box key={order.id} borderWidth={1} borderRadius="md" padding={4} width="100%">
-            <Text fontWeight="bold">Order ID: {order.id}</Text>
-            <Divider my={2} />
-            <VStack spacing={4} align="start" mt={4} gap={0}>
-              {order.orderHamburgers.map((hamburger: any, index: number) => (
-                <Box key={hamburger.id + index}>
-                  <Text fontWeight="bold">{hamburger.name}</Text>
-                  {hamburger.extras.length > 0 && (
-                    <VStack spacing={2} align="start" gap={0}>
-                      {hamburger.extras.map((extraIngredient: any, index: number) => (
-                        <Text key={hamburger.id + extraIngredient.id + index}>
-                          + {extraIngredient.ingredient.name} {extraIngredient.count > 0 && `(${extraIngredient.count})`}
-                        </Text>
-                      ))}
-                    </VStack>
-                  )}
-                  <Divider my={2} />
-                </Box>
-              ))}
-              <Price price={order.totalCost} />
-            </VStack>
-          </Box>
-        ))}
-      </VStack>
+      {orderHistory.length === 0 ? (
+        <p>No orders found.</p>
+      ) : (
+        <List>
+          {orderHistory.map((order: { id: number; totalPrice: number; rawData: string }) => (
+            <ListItem key={order.id}>
+              <p>Order ID: {order.id}</p>
+              <p>Total Price: {order.totalPrice}</p>
+              <Box maxWidth={600}>
+                <pre>{JSON.stringify(JSON.parse(order.rawData), null, 2)}</pre>
+              </Box>
+            </ListItem>
+          ))}
+        </List>
+      )}
     </Box>
   );
 };

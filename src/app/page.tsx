@@ -42,6 +42,7 @@ export default function Home() {
         backgroundSize={"contain"}
         backgroundRepeat={"no-repeat"}
         opacity={[0.4, 0.4, 1]}
+        boxShadow={"inset"}
         backgroundPosition={["bottom center", "bottom center", "bottom right"]}
         backgroundImage={"https://res.cloudinary.com/dugkeawjq/image/upload/f_auto,q_auto/coadzsqs4lmmzercbhuk"}></Box>
     </Box>

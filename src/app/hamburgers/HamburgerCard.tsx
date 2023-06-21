@@ -21,7 +21,16 @@ export default function HamburgerCard({ hamburger }: Props) {
   const name = hamburger.name || "Unknown Hamburger";
 
   return (
-    <Box onClick={handleOpen} as="button" borderRadius={16} overflow={"hidden"} maxWidth={320} marginInline={"auto"}>
+    <Box
+      onClick={handleOpen}
+      as="button"
+      borderRadius={16}
+      overflow={"hidden"}
+      maxWidth={320}
+      marginInline={"auto"}
+      zIndex={1}
+      transition={"all 150ms ease-out"}
+      _hover={{ transform: "scale(1.05)" }}>
       <Box position={"relative"} aspectRatio={1}>
         <Center position={"relative"}>
           <Box position="absolute" inset={0} bgGradient="linear(to-t, rgba(0,0,0,.7), transparent)" />
@@ -32,9 +41,9 @@ export default function HamburgerCard({ hamburger }: Props) {
           <Heading>${hamburger.basePrice}</Heading>
         </Box>
       </Box>
-      <Button colorScheme="red" width={"100%"} borderRadius={0} size={["sm", "md", "lg"]} zIndex={1}>
+      <Box background={"#E53E3E"} paddingBlock={"0.5em"} width={"100%"} borderRadius={0}>
         Get it
-      </Button>
+      </Box>
     </Box>
   );
 }
